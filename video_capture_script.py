@@ -6,9 +6,7 @@ video = cv2.VideoCapture(0)
 
 while True:
     check, frame = video.read()
-
     greyscale = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
     greyscale = cv2.GaussianBlur(greyscale, (21, 21), 0)
 
     if first_frame is None:
@@ -37,6 +35,6 @@ while True:
 
     if key == ord('q'):
         break
-
+    
 video.release()
 cv2.destroyAllWindows()
